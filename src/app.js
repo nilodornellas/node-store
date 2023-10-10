@@ -3,12 +3,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config');
 
 const app = express();
 const router = express.Router();
 
 // Conecta ao banco
-mongoose.connect('mongodb://nilo:e396cd8f@localhost:27017/admin')
+mongoose.connect(config.connectionString);
 
 
 // Carrega os Models
